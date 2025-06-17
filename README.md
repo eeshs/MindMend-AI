@@ -7,7 +7,7 @@ MindMend AI is a Flask-based journaling web app that uses GPT-4 to detect cognit
 
 ---
 
-## ✨ Features
+##  Features
 
 - 💬 **Journal Entry Submission** – Users can write free-form text entries to express their thoughts and emotions.
 - 🤖 **AI-Powered Feedback** – GPT-4 analyzes entries for 10+ cognitive distortions (e.g., catastrophizing, mind reading) and returns labeled feedback.
@@ -18,7 +18,7 @@ MindMend AI is a Flask-based journaling web app that uses GPT-4 to detect cognit
 
 ---
 
-## 🧱 Tech Stack
+## Tech Stack
 
 - **Frontend**: HTML, CSS (Jinja templates)
 - **Backend**: Python, Flask
@@ -28,7 +28,7 @@ MindMend AI is a Flask-based journaling web app that uses GPT-4 to detect cognit
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the Repository
 
@@ -90,7 +90,7 @@ Visit `http://127.0.0.1:5000` in your browser.
 
 ---
 
-## ✅ Distortion Types Detected
+## Distortion Types Detected
 
 - Overgeneralization  
 - Catastrophizing  
@@ -105,7 +105,7 @@ Visit `http://127.0.0.1:5000` in your browser.
 
 ---
 
-## 🔒 Security Notes
+## Security Notes
 
 - API keys are managed through environment variables using `.env`
 - Do **not** hardcode secrets in your codebase
