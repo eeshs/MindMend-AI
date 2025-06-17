@@ -3,7 +3,7 @@
 
 Journaling is shown to be one of the most powerful tools that can be used to regulate mental health and is backed by cognitive behavioral therapy (CBT) research. Writing about your thoughts and emotions can help regulate mood, reduce anxiety, and most importantly identify harmful thinking patterns. The issue is that when re-reading journal entries, most people are not familiar with the clinically-identified cognitive distortions(harmful thinking patterns) and much less are able to accurately identify them in their own writing. This is the gap that MindMend AI aims to fill.
 
-MindMend AI is a Flask-based journaling web app that uses GPT-4 to detect cognitive distortions in journal entries. It provides CBT-style feedback, tracks recurring thought patterns over time, and displays reflection prompts to support self-awareness and therapeutic conversations.
+MindMend AI is a Flask-based journaling web app that uses GPT-4 to detect cognitive distortions in journal entries. It provides CBT-style feedback, tracks recurring thought patterns over time, and displays reflection prompts to support self-awareness and therapeutic conversations. It also provides educational resources for each cognitive distortion detected in each entry.
 
 ---
 
