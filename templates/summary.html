@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Distortion Summary</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+        }
+        h1 {
+            color: #0077cc;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+        th, td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+        th {
+            background-color: #0077cc;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f0f8ff;
+        }
+        a {
+            text-decoration: none;
+            color: #0077cc;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .btn {
+            background-color: #0077cc;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🧠 Distortion Pattern Summary</h1>
+
+    <h2>Top Distortion Types</h2>
+    <table>
+        <tr>
+            <th>Distortion Type</th>
+            <th>Count</th>
+        </tr>
+        {% for t in types %}
+        <tr>
+            <td>{{ t.name }}</td>
+            <td>{{ t.count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Most Frequent Distorted Phrases</h2>
+    <table>
+        <tr>
+            <th>Pattern</th>
+            <th>Phrase</th>
+            <th>Count</th>
+        </tr>
+        {% for p in phrases[:5] %}
+        <tr>
+            <td>{{ p.pattern }}</td>
+            <td>{{ p.phrase }}</td>
+            <td>{{ p.count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h2>Reflection Prompts for Your Top Distorted Thoughts</h2>
+
+    {% for phrase in phrases[:5] %}
+    <table>
+        <tr>
+            <th colspan="2">“{{ phrase.phrase }}”</th>
+        </tr>
+        <tr>
+            <td><strong>Distortion Type:</strong></td>
+            <td>{{ phrase.pattern }}</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                {% set prompts = reflection_prompts.get(phrase.pattern, []) %}
+                {% if prompts %}
+                    <ul>
+                        {% for question in prompts[:2] %}
+                            <li>{{ question }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p><em>No reflection prompts available for this distortion type.</em></p>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+    {% endfor %}
+
+
+    <br>
+    <a class="btn" href="/">← Back to Journal</a>
+    <a class="btn" href="/entries">📜 Past Entries</a>
+</body>
+</html>

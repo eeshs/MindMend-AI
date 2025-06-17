@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <title>Previous Entries</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6f8;
+            padding: 40px;
+            max-width: 800px;
+            margin: auto;
+            color: #333;
+        }
+        .entry-block {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+        strong {
+            color: #0077cc;
+        }
+        a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        p {
+            white-space: pre-wrap;
+        }
+        .btn {
+            background-color: #0077cc;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-right: 10px;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Past Entries</h1>
+    {% for e in entries %}
+    <div class="entry-block">
+        <div class="entry-date">📅 {{ e.date.strftime('%B %d, %Y %I:%M %p') }}</div>
+        <strong>Entry:</strong> <p>{{ e.content }}</p>
+        <strong>Feedback:</strong> <p>{{ e.feedback|safe }}</p>
+    </div>
+    {% endfor %}
+    <a class="btn" href="/">← Back to Journal</a>
+    <a class="btn" href="/summary">📊 View Summary</a>
+</body>
+</html>
